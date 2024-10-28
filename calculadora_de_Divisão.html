@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora de divisão</title>
+    <script>
+        function calculamulti(){
+            let num1 = parseFloat(document.getElementById("num1").value);
+            let num2 = parseFloat(document.getElementById("num2").value);
+
+            if (isNaN(num1) &&  isNaN(num2)){
+                 document.getElementById("result").innerText = "insira números válidos, número 1 é número 2";
+                  return;
+            }
+
+            if(isNaN(num1)){
+                document.getElementById("result").innerText = "Por favor, insira o número 1 que seja válido";
+                return;
+            }
+
+            if(isNaN(num2)){
+                document.getElementById("result").innerText = "Por favor, insira o número 2 que seja válido";
+                return;
+            }
+
+            let result = num1 / num2;
+            document.getElementById("result").innerText = "resultado: " + result.toFixed(2);
+            
+        }
+    </script>
+</head>
+<body>
+
+    <h1> Calculadora de Divisão</h1>
+
+    <label for = "num1"> Digite seu primeiro número: </label>
+    <input type = "number" id = "num1" placeholder="Digite seu primeiro número">
+    <br>
+
+    <label for = "num2"> Digite seu segundo número: </label>
+    <input type=" number" id = "num2" placeholder="Digite seu segundo número">
+    <br>
+    
+    <button onclick="calculamulti()">dividir</button>
+
+    <p id="result"></p>
+
+    
+</body>
+</html>
